@@ -4,7 +4,8 @@ on:
   workflow_dispatch:      # Lets you run it manually anytime
   schedule:
     - cron: '30 0 * * *'  # Runs every day at 12:30 AM UTC (6:00 AM IST)
-
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
