@@ -3,28 +3,10 @@ class Solution:
         dic = {}
         for l in magazine:
             dic[l] = dic.get(l, 0) + 1
-        print(dic)
 
-        copy_dic = dic.copy()
-        for i in range(len(ransomNote)):
-            print(copy_dic)
+        for i in ransomNote:
 
-            if ransomNote[i] in dic:
-                if copy_dic[ransomNote[i]] >0:
-                    copy_dic[ransomNote[i]] -= 1
-                    print(copy_dic)
-                    continue
-                else :
-                    return False
-            elif ransomNote[i] not in dic:
+            if i not in dic or dic[i]<=0:
                 return False
-
-                copy_dic[ransomNote[i]] -= 1
-                print(copy_dic)
-            # if any(v ==0  for v in copy_dic.values()):
-            #     return True
-
+            dic[i] -= 1
         return True
-
-                
-        
